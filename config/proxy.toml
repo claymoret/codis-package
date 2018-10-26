@@ -6,7 +6,7 @@
 ##################################################
 
 # Set Codis Product Name/Auth.
-product_name = "codis-demo"
+product_name = "avalon-codis"
 product_auth = ""
 
 # Set auth for client session
@@ -32,8 +32,8 @@ proxy_addr = "0.0.0.0:19000"
 #          /zk/codis/db_{PRODUCT_NAME}/proxy-{HASHID} (compatible with Codis2.0)
 #        or else
 #          /jodis/{PRODUCT_NAME}/proxy-{HASHID}
-jodis_name = ""
-jodis_addr = ""
+jodis_name = "zookeeper"
+jodis_addr = "10.70.0.7:2181,10.70.0.118:2181,10.70.0.119:2181,10.70.0.163:2181,10.70.0.164:2181"
 jodis_auth = ""
 jodis_timeout = "20s"
 jodis_compatible = false

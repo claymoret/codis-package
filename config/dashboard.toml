@@ -8,14 +8,14 @@
 # Set Coordinator, only accept "zookeeper" & "etcd" & "filesystem".
 # for zookeeper/etcd, coorinator_auth accept "user:password" 
 # Quick Start
-coordinator_name = "filesystem"
-coordinator_addr = "/tmp/codis"
-#coordinator_name = "zookeeper"
-#coordinator_addr = "127.0.0.1:2181"
+#coordinator_name = "filesystem"
+#coordinator_addr = "/tmp/codis"
+coordinator_name = "zookeeper"
+coordinator_addr = "10.70.0.7:2181,10.70.0.118:2181,10.70.0.119:2181,10.70.0.163:2181,10.70.0.164:2181"
 #coordinator_auth = ""
 
 # Set Codis Product Name/Auth.
-product_name = "codis-demo"
+product_name = "avalon-codis"
 product_auth = ""
 
 # Set bind address for admin(rpc), tcp only.
