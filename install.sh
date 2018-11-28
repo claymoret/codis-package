@@ -8,7 +8,7 @@ programs="dashboard proxy fe server sentinel"
 dashboard_files="admin/codis-dashboard-admin.sh bin/codis-dashboard config/dashboard.toml"
 proxy_files="admin/codis-proxy-admin.sh bin/codis-proxy config/proxy.toml"
 fe_files="admin/codis-fe-admin.sh bin/codis-fe bin/assets"
-server_files="admin/codis-server-admin.sh bin/codis-server bin/redis-cli config/redis.conf data/"
+server_files="admin/codis-server-admin.sh bin/codis-server bin/redis-cli config/redis.conf config/local.conf data/"
 sentinel_files="admin/codis-sentinel-admin.sh bin/redis-sentinel config/sentinel.conf log/"
 
 for p in $programs
