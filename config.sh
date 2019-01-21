@@ -39,4 +39,24 @@ sed -i "s/^jodis_addr.*$/jodis_addr = \"$jodis_addr\"/" config/proxy.toml
 
 sed -i "s/6379/$redis_port/g" config/redis.conf
 
+### config/sentinel.conf
+sentinel_port=27000
+sentinel_master_prefix=avalon-codis-
+sentinel_master_list="10.70.7.7 10.70.7.9"
 
+sed -i "s/26379/$sentinel_port/g" config/sentinel.conf
+sed -i "/^sentinel monitor.*$/d" config/sentinel.conf
+sed -i "/^sentinel down-after-milliseconds.*$/d" config/sentinel.conf
+sed -i "/^sentinel failover-timeout.*$/d" config/sentinel.conf
+
+index=0
+for master in $sentinel_master_list
+do
+    ((index++))
+    master_name=$sentinel_master_prefix$index
+    cat <<EOF >> config/sentinel.conf
+sentinel monitor $master_name $master $redis_port 2
+sentinel down-after-milliseconds $master_name 3000
+sentinel failover-timeout $master_name 300000
+EOF
+done
