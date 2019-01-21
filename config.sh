@@ -40,8 +40,8 @@ sed -i "s/^jodis_addr.*$/jodis_addr = \"$jodis_addr\"/" config/proxy.toml
 sed -i "s/6379/$redis_port/g" config/redis.conf
 
 ### config/sentinel.conf
-sentinel_port=27000
-sentinel_master_prefix=avalon-codis-
+sentinel_port=27900
+sentinel_master_prefix=weview-codis-
 sentinel_master_list="10.70.7.7 10.70.7.9"
 
 sed -i "s/26379/$sentinel_port/g" config/sentinel.conf
