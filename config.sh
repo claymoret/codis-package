@@ -3,8 +3,10 @@
 
 ### admin/codis-fe-admin.sh
 COORDINATOR_ADDR="10.70.1.101,10.70.1.102,10.70.1.103,10.70.1.104,10.70.1.105"
+CODIS_FE_ADDR="0.0.0.0:8080"
 
 sed -i "s/^COORDINATOR_ADDR.*$/COORDINATOR_ADDR=\"$COORDINATOR_ADDR\"/" admin/codis-fe-admin.sh
+sed -i "s/^CODIS_FE_ADDR.*$/CODIS_FE_ADDR=\"$CODIS_FE_ADDR\"/" admin/codis-fe-admin.sh
 
 ### admin/codis-proxy-admin.sh
 CODIS_DASHBOARD_ADDR="10.70.1.102:18080"
